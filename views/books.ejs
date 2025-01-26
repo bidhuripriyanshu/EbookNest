@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Books</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Add event listener to all download buttons
+            document.querySelectorAll("[data-book]").forEach(button => {
+                button.addEventListener("click", () => {
+                    const bookTitle = button.getAttribute("data-book");
+                    alert(`Starting download for: ${bookTitle}`);
+                });
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll("nav a[href^='#']").forEach(link => {
+                link.addEventListener("click", event => {
+                    event.preventDefault();
+                    const targetSection = document.querySelector(link.getAttribute("href"));
+                    targetSection?.scrollIntoView({ behavior: "smooth" });
+                });
+            });
+        });
+
+        // Dynamically generate book cards
+        const booksData = {
+            fiction: [
+                { title: "The Great Gatsby", author: "F. Scott Fitzgerald" },
+                { title: "1984", author: "George Orwell" },
+                { title: "To Kill a Mockingbird", author: "Harper Lee" },
+                { title: "Pride and Prejudice", author: "Jane Austen" },
+            ],
+            "non-fiction": [
+                { title: "Sapiens: A Brief History of Humankind", author: "Yuval Noah Harari" },
+                { title: "Becoming", author: "Michelle Obama" },
+                { title: "Educated", author: "Tara Westover" },
+                { title: "The Immortal Life of Henrietta Lacks", author: "Rebecca Skloot" },
+            ],
+            educational: [
+                { title: "Introduction to Algorithms", author: "Thomas H. Cormen" },
+                { title: "Physics for Scientists and Engineers", author: "Raymond A. Serway" },
+                { title: "Calculus: Early Transcendentals", author: "James Stewart" },
+                { title: "Organic Chemistry", author: "Paula Yurkanis Bruice" },
+            ],
+            comics: [
+                { title: "Spider-Man: Into the Spider-Verse", author: "Marvel Comics" },
+                { title: "Batman: Year One", author: "Frank Miller" },
+                { title: "The Avengers", author: "Marvel Comics" },
+                { title: "Watchmen", author: "Alan Moore" },
+            ],
+        };
+
+        function generateBookCards(section) {
+            return booksData[section]
+                .map(
+                    book => `
+                        <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                            <h3 class="font-semibold text-lg">${book.title}</h3>
+                            <p class="text-sm text-gray-700">Author: ${book.author}</p>
+                            <button data-book="${book.title}" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Download</button>
+                        </div>
+                    `
+                )
+                .join("");
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-white text-lg font-bold">eBook Platform</a>
+            <div>
+                <a href="#fiction" class="text-white mx-2 hover:underline">Fiction</a>
+                <a href="#non-fiction" class="text-white mx-2 hover:underline">Non-Fiction</a>
+                <a href="#educational" class="text-white mx-2 hover:underline">Educational</a>
+                <a href="#comics" class="text-white mx-2 hover:underline">Comics</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="bg-orange-500 text-white py-20">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold mb-4">Explore Our Book Collection</h1>
+            <p class="text-lg">Find books from a variety of genres tailored to your interests.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto py-10">
+        <!-- Sections -->
+        <section id="fiction" class="mb-16">
+            <h2 class="text-3xl font-bold mb-4 text-center">Fiction</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
+                <script>document.write(generateBookCards("fiction"));</script>
+            </div>
+        </section>
+        <section id="non-fiction" class="mb-16">
+            <h2 class="text-3xl font-bold mb-4 text-center">Non-Fiction</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
+                <script>document.write(generateBookCards("non-fiction"));</script>
+            </div>
+        </section>
+        <section id="educational" class="mb-16">
+            <h2 class="text-3xl font-bold mb-4 text-center">Educational</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
+                <script>document.write(generateBookCards("educational"));</script>
+            </div>
+        </section>
+        <section id="comics" class="mb-16">
+            <h2 class="text-3xl font-bold mb-4 text-center">Comics</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center">
+                <script>document.write(generateBookCards("comics"));</script>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
