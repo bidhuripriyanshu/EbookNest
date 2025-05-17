@@ -1,0 +1,20 @@
+.dark footer{
+    background-color: #2d2d2d !important;
+    transition:  background-color ease-in-out .1s;
+}
+.dark footer .social-icons svg{
+    fill: #fff;
+    transition: color ease-in-out .1s;
+
+}
+.footer-link {
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #dc3545;
+    text-decoration: underline;
+}
+footer .copyright{
+    font-size: 12px;
+}

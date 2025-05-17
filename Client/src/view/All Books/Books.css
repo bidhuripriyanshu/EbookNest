@@ -1,0 +1,32 @@
+.search-menu-options>li {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    -webkit-box-shadow: 0px  10px 12px rgba(44, 101, 144, 0.1);
+    box-shadow: 0px 5px 12px rgba(44, 101, 144, 0.1);
+}
+.btn-search{
+    padding-bottom: 0;
+    font-size: 12px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+@media(max-width:580px) {
+    li.search-menu-opt {
+        width: 100%;
+    }
+
+    .iq-search-bar.search-book .searchbox {
+        width: 77%;
+    }
+
+    .search-menu-options>li {
+        margin-bottom: 20px;
+    }
+
+    .iq-search-filter {
+        margin-bottom: 0;
+    }
+}
