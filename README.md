@@ -46,5 +46,6 @@ cd frontend
 npm start
 ```
 ### Site View
-
+![Home](./Client/Home_Page.png)
+![Login](./Client/About_page.png)
 
