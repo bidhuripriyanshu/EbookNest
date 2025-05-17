@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # e-Book Store Fullstack Project
 
 ## Overview
@@ -46,9 +46,5 @@ cd frontend
 npm start
 ```
 ### Site View
--------------
-![Home](./Client/Home_Page.png)
-![Login](./Client/About_page.png)
-=======
-# ebook_platform_online
->>>>>>> 54bd32baa1d83722b63252cbbe21a0dcd52ab2de
+
+
