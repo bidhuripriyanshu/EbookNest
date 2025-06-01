@@ -1,0 +1,108 @@
+[
+  {
+    "title": "\"I GIVE YOU MY BODY ...\"",
+    "author": "Diana Gabaldon",
+    "price": "70.00",
+    "category": "Best sellers",
+    "language": "English",
+    "publisher": "Dell",
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780399178573-L.jpg"
+  },
+  {
+    "title": "#ASKGARYVEE",
+    "author": "Gary Vaynerchuk",
+    "price": "70.00",
+    "category": "Best sellers",
+    "language": "English",
+    "publisher": "HarperCollins",
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780062273123-L.jpg"
+  },
+  {
+    "title": "#GIRLBOSS",
+    "author": "Sophia Amoruso",
+    "price": "70.00",
+    "category": "Best sellers",
+    "language": "English",
+    "publisher": "Portfolio/Penguin/Putnam",
+    "image_url": "https://m.media-amazon.com/images/I/81ZjDae-ZUL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "title": "#NEVERAGAIN",
+    "author": "David Hogg and Lauren Hogg",
+    "price": "70.00",
+    "category": "Best sellers",
+    "language": "English",
+    "publisher": "Random House",
+    "image_url": "https://covers.openlibrary.org/b/isbn/9781984801838-L.jpg"
+  },
+  {
+    "title": "$100 STARTUP",
+    "author": "Chris Guillebeau",
+    "price": "23.00",
+    "language": "English",
+    "publisher": "Crown Business",
+    "image_url": "https://m.media-amazon.com/images/I/91RMI8oD9LL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "title": "\"YOU JUST NEED TO LOSE WEIGHT\"",
+    "author": "Aubrey Gordon",
+    "price": "70.00",
+    "category": "Best sellers",
+    "language": "English",
+    "publisher": "Beacon",
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780807006474-L.jpg"
+  },
+  {
+    "title": "'TIL DEATH DO US PART",
+    "author": "Amanda Quick",
+    "price": "70.00",
+    "category": "Best sellers",
+    "language": "English",
+    "publisher": "Berkley",
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780698193611-L.jpg"
+  },
+  {
+    "title": "'TIS THE SEASON",
+    "author": "Ron Carr",
+    "price": "70.00",
+    "category": "Best sellers",
+    "language": "English",
+    "publisher": "Harlequin Mira",
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780778316640-L.jpg"
+  },
+  {
+    "title": "(RE)BORN IN THE USA",
+    "author": "Roger Bennett",
+    "price": "70.00",
+    "category": "Best sellers",
+    "language": "English",
+    "publisher": "Dey Street",
+    "image_url": "https://m.media-amazon.com/images/I/81Lt5nQ1UuL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "title": "#IMOMSOHARD",
+    "author": "Kristin Hensley and Jen Smedley",
+    "price": "70.00",
+    "category": "Best sellers",
+    "language": "English",
+    "publisher": "HarperOne",
+    "image_url": "https://m.media-amazon.com/images/I/81MQ0q1X8sL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "title": "------, THAT'S DELICIOUS",
+    "author": "Action Bronson with Rachel Wharton",
+    "price": "70.00",
+    "category": "Best sellers",
+    "language": "English",
+    "publisher": "Abrams",
+    "image_url": "https://m.media-amazon.com/images/I/91WIMf9oNkL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+    "title": ".HACK G.U., VOL. 5",
+    "author": "Hamazaki Tatsuya",
+    "price": "10.99",
+    "language": "English",
+    "publisher": "TOKYOPOP",
+    "image_url": "https://bukovero.com/wp-content/uploads/2016/07/Harry_Potter_and_the_Cursed_Child_Special_Rehearsal_Edition_Book_Cover.jpg"
+  }
+]
