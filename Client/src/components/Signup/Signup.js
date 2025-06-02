@@ -24,6 +24,7 @@ function Signup() {
             password: user.password,
             role: user.role,
         })
+
         if (response.data.success) {
             toast.success(`${user.role.toUpperCase()} Registered Successfully`)
             setUser({

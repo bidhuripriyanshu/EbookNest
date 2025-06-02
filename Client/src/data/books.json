@@ -39,6 +39,7 @@
     "title": "$100 STARTUP",
     "author": "Chris Guillebeau",
     "price": "23.00",
+    "category": "Best sellers",
     "language": "English",
     "publisher": "Crown Business",
     "image_url": "https://m.media-amazon.com/images/I/91RMI8oD9LL._AC_UF1000,1000_QL80_.jpg"
@@ -101,6 +102,7 @@
     "title": ".HACK G.U., VOL. 5",
     "author": "Hamazaki Tatsuya",
     "price": "10.99",
+    "category": "Best sellers",
     "language": "English",
     "publisher": "TOKYOPOP",
     "image_url": "https://bukovero.com/wp-content/uploads/2016/07/Harry_Potter_and_the_Cursed_Child_Special_Rehearsal_Edition_Book_Cover.jpg"
