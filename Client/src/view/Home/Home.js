@@ -7,7 +7,7 @@ import Bookcards from '../../components/Bookscard/Bookcards'
 import Login from '../../components/Login/Login'
 import toast from 'react-hot-toast'
 import axios from 'axios'
-
+import staticBooks from '../../data/books.json'
 function Home() {
   const [books, setBooks] = useState([])
   const [user, setUser] = useState('')
@@ -48,13 +48,23 @@ console.log(user);
       <div className='container-fluid mt-4 home-book-cards p-3 '>
         <div className='container .container-bs'>
           <h1 className='p-2 text-center'>Favorite Reads</h1>
-          <div className='row row-cols-1 row-cols-md-4 g-3'>
-            {
-              books.slice(40, 44).map((book, i) => (
-                <Bookcards key={i} {...book} />
-              ))
-            }
-          </div>
+<div className='row row-cols-1 row-cols-md-4 g-3'>
+  {
+    books.slice(40, 44).map((book, i) => (
+      <Bookcards key={`api-${i}`} {...book} />
+    ))
+  }
+</div>
+
+<h2 className='p-2 text-center mt-4'>From Our Collection</h2>
+<div className='row row-cols-1 row-cols-md-4 g-3'>
+  {
+    staticBooks.map((book, i) => (
+      <Bookcards key={`static-${i}`} {...book} />
+    ))
+  }
+</div>
+
         </div>
       </div>
       <Footer />

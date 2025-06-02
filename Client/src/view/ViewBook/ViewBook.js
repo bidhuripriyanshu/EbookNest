@@ -14,23 +14,29 @@ function ViewBook() {
 
     useEffect(() => {
         const bData = async () => {
-            await axios.get(`${process.env.REACT_APP_BACKEND_URL}books`)
+    try {
+        toast.loading("Loading...");
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}books/${id}`);
+        const book = response.data.data; 
+        console.log(book); // single book object
+        setBook(book);
 
-                .then(response => {
-                    const book = response.data.data.find(b => b._id === id);
-                    const similarBooks = response.data.data.filter(b => b.category === book.category);
-                    toast.loading("Loading...")
-                    setTimeout(() => {
-                        toast.dismiss();
-                        toast.success("Book loaded ")
-                        setBook(book);
-                        setSimilarBooks(similarBooks);
-                    }, 1000);
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-        }
+        // Fetch all books to find similar books, or have a separate API for that
+        const allBooksResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}books`);
+        const allBooks = allBooksResponse.data.data;
+        const similarBooks = allBooks.filter(b => b.category === book.category && b._id !== book._id);
+        console.log(allBooks);
+        setSimilarBooks(similarBooks);
+
+        toast.dismiss();
+        toast.success("Book loaded");
+    } catch (error) {
+        toast.dismiss();
+        toast.error("Failed to load book");
+        console.error(error);
+    }
+};
+
         bData();
     }, [id]);
 
@@ -47,6 +53,7 @@ function ViewBook() {
                         </div>
                         <div className='col-lg-8 col-md-8'>
                             <h2>{book.title}</h2>
+                            
                             <small>{book.language}</small>
                             <p><span><small>{book.contributor}</small></span></p>
                             <p className='description'>{book.description}</p>
