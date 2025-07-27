@@ -9,7 +9,14 @@ import { postLogin, postSignup } from './controllers/User.js';
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["https://ebook-platform-online-icy6.vercel.app"],
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true,  
+    }
+));
+
 
 try {
     mongoose.connect(process.env.DB_URL)
