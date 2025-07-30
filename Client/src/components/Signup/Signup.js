@@ -37,7 +37,7 @@ function Signup() {
             })
             toast.loading("Redirecting to Login")
             setTimeout(() => {
-                window.location.href = '/login'
+                window.location.href = '/'
             }, 2000)
             localStorage.setItem("Users", JSON.stringify(response.data.data))
 
