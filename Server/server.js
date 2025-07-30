@@ -10,12 +10,12 @@ import { postLogin, postSignup } from './controllers/User.js';
 const app = express();
 app.use(express.json());
 
-// Use only the cors package for CORS
 app.use(cors({
     origin: ["https://ebook-platform-online-icy6.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,  
 }));
+
 
 try {
     mongoose.connect(process.env.DB_URL)
