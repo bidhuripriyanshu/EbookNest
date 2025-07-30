@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import Bookcards from '../../components/Bookscard/Bookcards'
 import OpenLibrarySearch from '../../components/OpenLibrarySearch/OpenLibrarySearch'
+import BookAPIManager from '../../components/BookAPIManager/BookAPIManager'
 import { bookAPI } from '../../services/api'
 import toast from 'react-hot-toast'
 import { Link } from 'react-router-dom'
@@ -16,6 +17,7 @@ function Books() {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(false)
   const [showOpenLibrarySearch, setShowOpenLibrarySearch] = useState(false)
+  const [showBookAPIManager, setShowBookAPIManager] = useState(false)
 
   const getBook = async () => {
     try {
@@ -108,6 +110,14 @@ function Books() {
                       Import from OpenLibrary
                     </button>
                   </li>
+                  <li className="search-menu-opt">
+                    <button 
+                      className="btn btn-success"
+                      onClick={() => setShowBookAPIManager(true)}
+                    >
+                      Import from BookAPI
+                    </button>
+                  </li>
                 </>
               )}
             </ul>
@@ -166,6 +176,30 @@ function Books() {
             <OpenLibrarySearch 
               onBookAdded={getBook}
               onClose={() => setShowOpenLibrarySearch(false)}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* BookAPI Manager Modal */}
+      {showBookAPIManager && (
+        <div className="modal-overlay" style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          zIndex: 1000,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '20px'
+        }}>
+          <div style={{ maxHeight: '90vh', overflow: 'auto' }}>
+            <BookAPIManager 
+              onBooksImported={getBook}
+              onClose={() => setShowBookAPIManager(false)}
             />
           </div>
         </div>

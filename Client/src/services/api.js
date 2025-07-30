@@ -76,6 +76,18 @@ export const bookAPI = {
   searchBooks: async (query) => {
     const response = await api.get(`/books/search?q=${encodeURIComponent(query)}`);
     return response.data;
+  },
+
+  // Get BookAPI.json data
+  getBookAPIData: async () => {
+    const response = await api.get('/books/api-data');
+    return response.data;
+  },
+
+  // Import BookAPI.json data into database
+  importBookAPIData: async () => {
+    const response = await api.post('/books/import-api-data');
+    return response.data;
   }
 };
 
