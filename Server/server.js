@@ -9,14 +9,13 @@ import { postLogin, postSignup } from './controllers/User.js';
 
 const app = express();
 app.use(express.json());
-app.use(cors(
-    {
-        origin: ["https://ebook-platform-online-icy6.vercel.app"],
-        methods: ["GET", "POST", "PUT", "DELETE"],
-        credentials: true,  
-    }
-));
 
+// Use only the cors package for CORS
+app.use(cors({
+    origin: ["https://ebook-platform-online-icy6.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,  
+}));
 
 try {
     mongoose.connect(process.env.DB_URL)
@@ -26,8 +25,6 @@ catch (err) {
     console.error('Error connecting to MongoDB:', err)
 }
 
-
-
 app.get("/", (req, res) => {
     res.send("Hello, server is ready!");
 })
@@ -36,7 +33,6 @@ app.get("/books", getBook)
 app.post("/book", postBook)
 app.post("/signup", postSignup)
 app.post("/login",postLogin)
-
 
 const PORT = process.env.PORT || 4000
 app.listen(PORT, () => {
