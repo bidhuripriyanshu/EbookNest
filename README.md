@@ -1,5 +1,5 @@
 
-# e-Book Store Fullstack Project
+# E-Book Store Fullstack Project
 
 ## Overview
 -----------
