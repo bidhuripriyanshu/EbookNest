@@ -17,17 +17,17 @@ const userSchema = new Schema({
     },
     mobile: {
         type: Number,
-       
+    },
     age: {
         type: Number,
-       
     },
     role:{
         type: String,
         enum: ['user', 'admin'],
         required: true,
     }
-}, {
+}, 
+{
     timestamps: true
 })
 
