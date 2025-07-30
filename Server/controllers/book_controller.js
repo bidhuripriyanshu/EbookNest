@@ -25,8 +25,43 @@ const postBook = async (req, res) => {
     }
 }
 
+const searchBooks = async (req, res) => {
+    try {
+        const { q } = req.query;
+        
+        if (!q) {
+            return res.json({ 
+                success: false, 
+                message: "Search query is required" 
+            });
+        }
+
+        const searchRegex = new RegExp(q, 'i');
+        const books = await Books.find({
+            $or: [
+                { title: searchRegex },
+                { author: searchRegex },
+                { category: searchRegex }
+            ]
+        }).sort({ createdAt: -1 });
+
+        res.json({
+            success: true,
+            message: "Search completed successfully",
+            data: books
+        });
+    } catch (err) {
+        res.json({ 
+            success: false, 
+            message: "Failed to search books", 
+            error: err.message 
+        });
+    }
+}
+
 export {
     getBook,
-    postBook
+    postBook,
+    searchBooks
 }
 

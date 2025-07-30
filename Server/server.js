@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 dotenv.config();
 import cors from 'cors'
 import mongoose from 'mongoose';
-import { getBook, postBook } from './controllers/book_controller.js';
+import { getBook, postBook, searchBooks } from './controllers/book_controller.js';
 import { postLogin, postSignup } from './controllers/User.js';
 // const booksRouter = require('./routes/books');
 
@@ -30,6 +30,7 @@ app.get("/", (req, res) => {
 })
 
 app.get("/books", getBook)
+app.get("/books/search", searchBooks)
 app.post("/book", postBook)
 app.post("/signup", postSignup)
 app.post("/login",postLogin)
