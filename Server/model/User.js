@@ -9,12 +9,6 @@ const userSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        validate: {
-            validator: function (v) {
-                return /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(v);
-            },
-            message: 'Invalid email address.'
-        }
     },
     password: {
         type: String,
@@ -23,11 +17,10 @@ const userSchema = new Schema({
     },
     mobile: {
         type: Number,
-        required: true,
-    },
+       
     age: {
         type: Number,
-        required: true
+       
     },
     role:{
         type: String,
