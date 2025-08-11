@@ -22,7 +22,9 @@ const postLogin = async (req, res) => {
 const postSignup = async (req, res) => {
     try {
         const { name, email, password, mobile, age, role } = req.body;
+        
         const existingUser = await User.findOne({ email });
+        
         if (existingUser) {
             return res.status(400).json({ success: false, message: "Email already exists" });
         }
@@ -38,6 +40,7 @@ const postSignup = async (req, res) => {
         await user.save();
         res.json({ success: true, message: "User registered successfully", data: user });
     } catch (err) {
+        console.log(user)
         res.json({ success: false, message: "Failed to register user", error: err.message });
     }
 
