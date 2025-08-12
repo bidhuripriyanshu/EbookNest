@@ -28,7 +28,7 @@ const postSignup = async (req, res) => {
         if (existingUser) {
             return res.status(400).json({ success: false, message: "Email already exists" });
         }
-        const hashpassword = await bcryptjs.hash(password, 10);
+        const hashpassword = await bcryptjs.hash(password, 4);
         const user = new User({
             name,
             email,
