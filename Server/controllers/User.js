@@ -33,8 +33,6 @@ const postSignup = async (req, res) => {
             name,
             email,
             password: hashpassword,
-            mobile,
-            age,
             role,
         })
         await user.save();
